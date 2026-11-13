@@ -8,6 +8,10 @@ Agent skills I use on my own projects. Each one is a single `SKILL.md` in the [A
 
 > Use the full-review skill on this branch.
 
+**[submit](skills/submit/SKILL.md)** takes a finished branch to a pull request. It brings in the base branch the way your project does, merging by default, and fixes where the two meet. A subagent that never saw the work trims the comments the branch adds; then the skill runs your check command and pushes. It opens the pull request, or rewrites the open one, with a description of the net change, and watches CI until it passes, fixing the cause of each failure rather than loosening the check. It never merges.
+
+> Use the submit skill.
+
 **[dependency-update](skills/dependency-update/SKILL.md)** updates every dependency to the newest version its `package.json` range allows and moves Node to its newest LTS release. It fixes what the updates break, researches the changelogs for anything worth acting on, and reports the updates your ranges block.
 
 > Use the dependency-update skill and open a pull request.
