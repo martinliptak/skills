@@ -8,7 +8,7 @@ Agent skills I use on my own projects. Each one is a single `SKILL.md` in the [A
 
 > Use the full-review skill on this branch.
 
-**[submit](skills/submit/SKILL.md)** takes a finished branch to a pull request. It brings in the base branch the way your project does, merging by default, and fixes where the two meet. A subagent that never saw the work trims the comments the branch adds; then the skill runs your check command and pushes. It opens the pull request, or rewrites the open one, with a description of the net change, and watches CI until it passes, fixing the cause of each failure rather than loosening the check. It never merges.
+**[submit](skills/submit/SKILL.md)** takes a finished branch to a pull request: it updates the branch from its base, has a fresh subagent trim the comments the branch adds, pushes, writes the pull request, and watches the checks until they pass. It never merges.
 
 > Use the submit skill.
 
