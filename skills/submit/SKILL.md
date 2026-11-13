@@ -20,7 +20,7 @@ The base is the remote branch this one would merge into (`origin/main`), not the
    The pull request describes the net diff against the base branch, not the commit history. Use the repo's pull request template if it has one. If not, use these sections, and omit a section that does not apply:
 
    - `## Problem` — why the change exists. End with the ticket link if there is one.
-   - `## Approach` — lead the reviewer through the change in reading order. Name an alternative only where there was a real decision.
+   - `## Approach` — lead the reviewer through the change in reading order. Wherever you weighed another approach or implementation, including ones you tried and dropped, name it and say why this one won, so the reviewer doesn't propose it again.
    - `## Test Plan` — a `- [ ]` list of manual checks. Nothing CI runs.
    - `## Release Notes` — two to four plain sentences for users.
    - `## Deploy Steps` — a `- [ ]` list of what someone must do by hand around the deploy: env vars to set, commands to run. Mark each step before or after deploy, and give the exact variable name or command. Nothing the deploy pipeline runs itself.
