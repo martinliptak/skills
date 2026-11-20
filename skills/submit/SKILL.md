@@ -26,3 +26,27 @@ The base is the remote branch this one would merge into (`origin/main`), not the
    - `## Deploy Steps` — a `- [ ]` list of what someone must do by hand around the deploy: env vars to set, commands to run. Mark each step before or after deploy, and give the exact variable name or command. Nothing the deploy pipeline runs itself.
 
 5. **Watch the checks** until they pass. Fix the cause of a failure; never loosen a check. Report a failure that isn't the branch's fault.
+
+6. **Report** in exactly this shape, with nothing before or after it:
+
+   ```
+   Opened [#143](url).
+
+   - **Update:** no changes in main.
+   - **Comments:** 2 trimmed, 1 removed.
+   - **Description:** updated Approach.
+
+   **Test Plan**
+   - [ ] …
+
+   **Deploy Steps**
+   - [ ] …
+   ```
+
+   - The first line says `Opened` for a new pull request or `Updated` for an existing one, then the link.
+   - **Update:** `no changes in <base>.`, or `merged N commits from <base>.` followed by a short clause for each place you fixed where they met the branch, and any local step you ran.
+   - **Comments:** counts only, such as `2 trimmed, 1 removed.`, or `no changes.`
+   - **Description:** only when updating an existing pull request: `updated <sections>.` or `unchanged.`
+   - **Check:** only if the check command needed fixes: `fixed <what>.`
+   - **Checks:** only for a failure that isn't the branch's fault: `<check> fails because <cause>.`
+   - **Test Plan** and **Deploy Steps**: copied in full from the pull request body, or `No manual tests.` and `No deploy steps.` when it has none.
