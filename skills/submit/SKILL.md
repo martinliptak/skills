@@ -49,4 +49,4 @@ The base is the remote branch this one would merge into (`origin/main`), not the
    - **Description:** only when updating an existing pull request: `updated <sections>.` or `unchanged.`
    - **Check:** only if the check command needed fixes: `fixed <what>.`
    - **Checks:** only for a failure that isn't the branch's fault: `<check> fails because <cause>.`
-   - **Test Plan** and **Deploy Steps**: copied in full from the pull request body as plain bullets, without the checkboxes, or `No manual tests.` and `No deploy steps.` when it has none.
+   - **Test Plan** and **Deploy Steps**: copied in full from the pull request body as plain bullets, without the checkboxes. Leave out a section the pull request doesn't have.
