@@ -25,9 +25,9 @@ The base is the remote branch this one would merge into (`origin/main`), not the
    - `## Release Notes` — two to four plain sentences for users.
    - `## Deploy Steps` — a `- [ ]` list of what someone must do by hand around the deploy: env vars to set, commands to run. Mark each step before or after deploy, and give the exact variable name or command. Nothing the deploy pipeline runs itself.
 
-5. **Watch the checks** until they pass. Fix the cause of a failure; never loosen a check. Report a failure that isn't the branch's fault.
+5. **Start watching the checks** in a background command that wakes you when it exits, such as `gh pr checks <number> --watch --fail-fast`, and go straight on to the report. Don't sleep or poll in the foreground: the user may ask you something while CI runs. If `gh` says no checks are reported yet, start the watch again. If your agent can't run background commands, watch in the foreground and report once the checks finish.
 
-6. **Report** in exactly this shape, with nothing before or after it:
+6. **Report** in exactly this shape, with nothing before or after it, then end your turn:
 
    ```
    Opened [#143](url).
@@ -35,6 +35,7 @@ The base is the remote branch this one would merge into (`origin/main`), not the
    - **Update:** no changes in main.
    - **Comments:** 2 trimmed, 1 removed.
    - **Description:** updated Approach.
+   - **Checks:** running.
 
    **Test Plan**
    - …
@@ -48,5 +49,11 @@ The base is the remote branch this one would merge into (`origin/main`), not the
    - **Comments:** counts only, such as `2 trimmed, 1 removed.`, or `no changes.`
    - **Description:** only when updating an existing pull request: `updated <sections>.` or `unchanged.`
    - **Check:** only if the check command needed fixes: `fixed <what>.`
-   - **Checks:** only for a failure that isn't the branch's fault: `<check> fails because <cause>.`
+   - **Checks:** `running.`, or the outcome if you watched in the foreground.
    - **Test Plan** and **Deploy Steps**: copied in full from the pull request body as plain bullets, without the checkboxes. Leave out a section the pull request doesn't have.
+
+7. **When a background watch exits**, reply with one line and nothing else:
+
+   - Passed: `Checks passed on [#143](url).`
+   - Failed because of the branch: fix the cause, push, and start the watch again; never loosen a check. Say what failed and what you fixed.
+   - Failed for another reason: `<check> fails because <cause>.`
