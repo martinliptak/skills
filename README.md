@@ -12,6 +12,10 @@ Agent skills I use on my own projects. Each one is a single `SKILL.md` in the [A
 
 > Use the submit skill.
 
+**[retro](skills/retro/SKILL.md)** looks back over the session you just had and proposes what would make the next one faster: tooling the agent built and should have found already, a missing pointer or check, a line for your agent's instructions, and how you could ask for things more directly and write shorter messages, such as `wdyt` for "what do you think". Every suggestion points to a moment in the session. gstack and Matt Pocock's skills each ship a `retro` too; install only one.
+
+> Use the retro skill.
+
 **[dependency-update](skills/dependency-update/SKILL.md)** updates every dependency to the newest version its `package.json` range allows and moves Node to its newest LTS release. It fixes what the updates break, researches the changelogs for anything worth acting on, and reports the updates your ranges block.
 
 > Use the dependency-update skill and open a pull request.
