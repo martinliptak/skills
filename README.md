@@ -12,7 +12,7 @@ Agent skills I use on my own projects. Each one is a single `SKILL.md` in the [A
 
 > Use the submit skill.
 
-**[retro](skills/retro/SKILL.md)** looks back over the past week of agent sessions in your repo, read from Claude Code's and Codex's logs, and proposes what would make the next ones faster: tooling the agent built and should have found already, a missing pointer or check, a line for your agent's instructions, and how you could ask for things more directly and write shorter messages, such as `wdyt` for "what do you think". Every suggestion points to the sessions it came from, and what recurs ranks first. Run it weekly, or after a hard session. gstack and Matt Pocock's skills each ship a `retro` too; install only one.
+**[retro](skills/retro/SKILL.md)** looks back over the past week of agent sessions in your repo, from every coding agent's logs on your machine, and proposes what would make the next ones faster: tooling the agent built and should have found already, a missing pointer or check, a line for your agent's instructions, and how you could ask for things more directly and write shorter messages, such as `wdyt` for "what do you think". Every suggestion points to the sessions it came from, and what recurs ranks first. Run it weekly, or after a hard session. gstack and Matt Pocock's skills each ship a `retro` too; install only one.
 
 > Use the retro skill.
 
