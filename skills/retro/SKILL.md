@@ -1,6 +1,6 @@
 ---
-name: debrief
-description: Look back over the current session and propose what would make the next one go faster — a check, a pointer, committed tooling, a line in the agent's instructions — and how the user could ask for things more directly. Use at the end of a session that was slower or harder than it should have been. Not for judging the code the session produced; use full-review for that.
+name: retro
+description: Look back over the current session and propose what would make the next one go faster — a check, a pointer, committed tooling, a line in the agent's instructions — and how the user could ask for things more directly and write their messages faster. Use at the end of a session that was slower or harder than it should have been. Not for judging the code the session produced; use full-review for that.
 ---
 
 Look back over this session and find what made it slower or harder than it needed to be. Then propose changes to the agent's environment so the next session doesn't hit the same thing, and tips that help the user say what they want sooner.
@@ -11,7 +11,7 @@ Read the session itself: the current conversation, or a transcript file the user
 
 Every candidate has to come from a specific moment in this session: a misread request, a wrong turn, a search that took many tries, something built from scratch. If you can't point to the moment, drop the candidate. Generic advice is noise.
 
-Count the cost in turns, tool calls, and corrections. Something that cost one extra call isn't worth a permanent change. A smooth session has little to teach, and "nothing to change" is a real result.
+Count the cost in turns, tool calls, corrections, and the words the user had to type. Something that cost one extra call isn't worth a permanent change. A smooth session has little to teach, and "nothing to change" is a real result.
 
 ## 2. What to look for
 
@@ -27,7 +27,8 @@ On the agent's side:
 On the user's side:
 
 7. **Phrasing.** Requests the agent misread, corrections the user had to repeat, context that would have saved a round trip if it had come first. Say what to say next time, in the user's own words where you can.
-8. **Shorthand.** Words or phrases the user typed often, or long instructions they gave more than once, that a short term could replace. A shorthand only works if the agent knows it, so pair each with the line that defines it in `CLAUDE.md` / `AGENTS.md`. Never suggest one that relies on the agent guessing.
+8. **Shorthand.** Phrases the user typed more than once that a common chat abbreviation replaces: "what do you think" → `wdyt`, "looks good to me" → `lgtm`, "never mind" → `nvm`, "if I remember correctly" → `iirc`. Agents know these already. For a long instruction the user keeps repeating, propose a term of their own, paired with the line that defines it in `CLAUDE.md` / `AGENTS.md`; never suggest one that relies on the agent guessing.
+9. **Shorter messages.** When the user's messages tend to run long, quote one and show how a native speaker would say the same thing in fewer words. Only for a habit across several messages, never for one long message. Don't correct grammar, spelling, or word choice the agent understood; wording that caused a misread belongs under phrasing.
 
 Where a fix can live in the repo or in the user's instructions, prefer the one that works without anyone remembering it: a check over a rule, a committed script over a tip, a line in the instructions over a habit.
 
