@@ -16,8 +16,6 @@ Agent skills in the [Agent Skills](https://agentskills.io) format, for Claude Co
 
 The update skills are written for pnpm. On npm or yarn, the agent finds the equivalent commands.
 
-Invoke a skill by name, for example: "Use the submit skill."
-
 ## Install
 
 Copy a skill's directory to:
