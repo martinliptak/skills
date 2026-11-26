@@ -15,9 +15,6 @@ Agent skills in the [Agent Skills](https://agentskills.io) format, for Claude Co
 **[security-update](skills/security-update/SKILL.md)**: resolves the package audit and the CVEs in the pinned Node version, takes every cheap fix, triages the rest for production exploitability, and reports what it fixed, dismissed, and left.
 
 The update skills are written for pnpm. On npm or yarn, the agent finds the equivalent commands.
-
-Invoke a skill by name, for example: "Use the submit skill."
-
 ## Install
 
 Copy a skill's directory to:
